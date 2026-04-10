@@ -1,0 +1,41 @@
+
+/* Header Styles */
+
+.header{
+   background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Ombra sovrapposta */
+        url('/media/sfondo_sito.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+
+.text-color{
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Box Styles */
+.box {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: rgba(164, 57, 57, 0.9);
+    color: #000;
+    border-color: #000;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    transform: translateY(10px);
+    
+}
+
+.item {
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

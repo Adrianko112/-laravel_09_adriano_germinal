@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chi Siamo</title>
+    <title>GymBro</title>
     <!-- css custom -->
      <link rel="stylesheet" href="/style.css">
         <!-- css bootstrap -->
@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-dark border-bottom" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ route('home') }}"><i class="bi bi-activity"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,39 +42,30 @@
 </nav>
 <!-- navbar end -->
    <!-- header -->
-    <header>
-      
-        <div class="container-fluid header d-flex align-items-center justify-content-center">
-            <div class="row align-items-center h-100">
-               <div class="col-6">
-                <h2 class="text-white text-center text-color display-4 fw-bold">Chi siamo</h2>
-                <p class="text-white text-center text-color display-6">Siamo un gruppo di appassionati di fitness dedicati a aiutarti a raggiungere i tuoi obiettivi di allenamento.</p>
-               </div>
-               <div class="col-6">
-                <img src="/media/pt.jpg" alt="I nostri Personal Trainer" class="img-fluid rounded-3 shadow">
-               </div>
+  <header>
+    <div class="container-fluid servizi">
+        <div class="row justify-content-center"> 
+            <div class="col-12 mb-5">
+                <h2 class="text-white text-center text-color display-4 fw-bold">I nostri servizi</h2>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                @foreach($servizi as $servizio)
+                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+                    <div class="card h-100" style="width: 18rem;">
+                        <img src="{{ $servizio['img'] }}" class="card-img-top cardImg" alt="immagine del servizio">
+                        <div class="card-body d-flex flex-column bg-dark text-white">
+                            <h5 class="card-title">{{ $servizio['name'] }}</h5>
+                            <p class="card-text">{{ $servizio['description'] }}</p>
+                            <a href="{{ route('servicesDetail', ['id' => $servizio['id']]) }}" class="btn btn-primary mt-auto">Vai al servizio</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
-    </header>
-    <!-- header end -->
-
-    <!-- lista utenti -->
-    <section class="container user-list">
-      <div class="row vh-100 align-items-center justify-content-around">
-        @foreach($users as $user)
-        <div class="col-12 col-md-4">
-         <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{$user['name']}} {{$user['surname']}}</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">{{$user['role']}}</h6>
-    <a href="{{ route('aboutUsDetail', ['name' => $user['name']]) }}" class="card-link">Approfondisci</a>
-  </div>
-</div>
-        </div>
-        @endforeach
-
-      </div>
-    </section>
+    </div>
+</header>
    
    
    

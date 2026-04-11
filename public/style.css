@@ -39,3 +39,24 @@
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+/* Sezione Utenti */
+.user-list {
+    height: 70vh;
+    
+}   
+
+.servizi {
+     background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Ombra sovrapposta */
+        url('/media/sfondo_sito.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.cardImg {
+    height: 200px;
+    object-fit: cover;
+}

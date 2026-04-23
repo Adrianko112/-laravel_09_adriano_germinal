@@ -20,3 +20,8 @@ Route::get('/servizi/detail/{id}', [ServiziController::class, 'serviziDetail'])-
 //invio mail 
 
 Route::post('/contact-us', [PublicController::class,'contactUs'])->name('contactUs');
+
+//aggiunta servizio
+Route::get('/services/create', [ServiziController::class, 'create'])->name('services-create');
+
+Route::post('/services/submit', [ServiziController::class, 'store'])->name('services-store');

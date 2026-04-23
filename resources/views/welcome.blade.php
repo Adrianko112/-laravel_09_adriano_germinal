@@ -9,6 +9,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+            @if (session()->has('successMessage'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session()->get('successMessage') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            
+            @endif
             <div class="row align-items-center h-100">
                 <div class="col-12 d-flex flex-column align-items-center justify-content-center h-100">
                     <h1 class="text-center display-3 mt-5 fw-bold text-color">Benvenuti su GymBro</h1>

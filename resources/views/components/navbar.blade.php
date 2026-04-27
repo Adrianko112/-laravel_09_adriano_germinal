@@ -20,6 +20,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('services') }}">Tutti i nostri servizi</a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{{ route('services-create') }}">Crea un nuovo servizio</a>
+        </li>
 
 
 

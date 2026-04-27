@@ -1,5 +1,10 @@
 <div class="card h-100" style="width: 18rem;">
-                        <img src="https://picsum.photos/200/300" class="card-img-top cardImg" alt="immagine del servizio">
+    @if (!$servizio->img)
+                            <img src="https://picsum.photos/200/300" class="card-img-top cardImg" alt="immagine del servizio">
+
+    @else
+                        <img src="{{Storage::url($servizio->img) }}" class="card-img-top cardImg" alt="immagine del servizio">
+    @endif
                         <div class="card-body d-flex flex-column bg-dark text-white">
                             <h5 class="card-title">{{ $servizio['name'] }}</h5>
                             <p class="card-text">{{ $servizio['description'] }}</p>

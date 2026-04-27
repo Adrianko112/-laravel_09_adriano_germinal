@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
-use Illuminate\Http\Request;
+use Illuminate\Http\Requests;
 
 
 class ServiziController extends Controller
@@ -50,11 +51,12 @@ public function create() {
    return view('servizi.create');
 }
 
-    public function store(Request $request) {
+    public function store(ServiceRequest $request) {
         $servizio = new Service();
         $servizio->name = $request->name;
         $servizio->description = $request->description;
         $servizio->price = $request->price;
+        $servizio->img = $request->file('img')->store('public/images');
        $servizio->save();
 
        return redirect()->route('home')->with('successMessage','Servizio creato con successo!');

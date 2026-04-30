@@ -56,7 +56,7 @@ public function create() {
         $servizio->name = $request->name;
         $servizio->description = $request->description;
         $servizio->price = $request->price;
-        $servizio->img = $request->file('img')->store('public/images');
+        $servizio->img = $request->file('img')->store('images', 'public');
        $servizio->save();
 
        return redirect()->route('home')->with('successMessage','Servizio creato con successo!');

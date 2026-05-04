@@ -22,6 +22,6 @@ Route::get('/servizi/detail/{id}', [ServiziController::class, 'serviziDetail'])-
 Route::post('/contact-us', [PublicController::class,'contactUs'])->name('contactUs');
 
 //aggiunta servizio
-Route::get('/services/create', [ServiziController::class, 'create'])->name('services-create');
+Route::get('/services/create', [ServiziController::class, 'create'])->name('services-create')->middleware('auth');
 
 Route::post('/services/submit', [ServiziController::class, 'store'])->name('services-store');

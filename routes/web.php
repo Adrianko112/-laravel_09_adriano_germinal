@@ -15,7 +15,7 @@ Route::get('/contatti', [PublicController::class, 'contacts'])->name('contacts')
 Route::get('/servizi', [ServiziController::class, 'servizi'])->name('services');
 
 
-Route::get('/servizi/detail/{id}', [ServiziController::class, 'serviziDetail'])->name('servicesDetail');
+
 
 //invio mail 
 
@@ -25,3 +25,15 @@ Route::post('/contact-us', [PublicController::class,'contactUs'])->name('contact
 Route::get('/services/create', [ServiziController::class, 'create'])->name('services-create')->middleware('auth');
 
 Route::post('/services/submit', [ServiziController::class, 'store'])->name('services-store');
+
+//vedere servizio
+
+Route::get('servizi/show/{servizio}', [ServiziController::class,'show'])->name('servizio.show');
+
+//modificare servizio
+
+Route::get('servizio/edit/{servizio}', [ServiziController::class,'edit'])->name('servizio.edit')->middleware('auth');
+Route::put('servizio/update/{servizio}', [ServiziController::class,'update'])->name('servizio.update')->middleware('auth');
+
+//cancellare servizio 
+Route::delete('servizio/delete/{servizio}', [ServiziController::class,'destroy'])->name('servizio.delete')->middleware('auth');
